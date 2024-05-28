@@ -1,23 +1,24 @@
+import { useState } from 'react';
+
+import Header from './components/Header';
+import TodoForm from './components/TodoForm';
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [darkMode, setMode] = useState(true)
+
+  function switchMode() {
+    setMode(!darkMode);
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="todo">
+        <Header darkMode={darkMode} switchMode={switchMode}/>
+        <main className={darkMode ? 'dark-theme' : 'light-theme'}>
+          <TodoForm />
+        </main>
     </div>
   );
 }

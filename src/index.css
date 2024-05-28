@@ -1,13 +1,161 @@
+@font-face {
+  font-family: "Josefin-Sans";
+  src: url("public/fonts/JosefinSans-Regular.ttf")
+}
+@font-face {
+  font-family: "Josefin-Sans";
+  src: url("public/fonts/JosefinSans-Medium.ttf")
+}
+body {
+  font-size: 18px;
+  font-family: "Josefin-Sans";
+  min-height: 660px;
+  min-width: 920px;
+}
+
+
+/**********************/
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+    font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/*********************/
+
+.todo > main {
+  height: calc(100vh - 300px);
+}
+
+.todo > main.dark-theme{
+  background: #161722;
+}
+.todo > main.light-theme{
+  background: #D2D3DB;
+}
+
+.todo > header {
+  min-height: 300px;
+}
+
+.todo > header.dark-theme{
+  background: linear-gradient(0deg, rgba(87,143,255,1) 0%, rgba(192,88,243,1) 0%);
+  background: url('public/img/bg-desktop-dark.jpg');
+  background-size: cover;
+}
+.todo > header.light-theme{
+  background: linear-gradient(0deg, rgba(87,143,255,1) 0%, rgba(192,88,243,1) 0%);
+  background: url('public/img/bg-desktop-light.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+
+/*********************/
+.main_container {
+  width: 68%;
+  margin: 0 auto;
+}
+
+/*********************/
+header {
+  width: 100vw;
+  padding-top: 4em;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+header h1 {
+  letter-spacing: .5em;
+  margin: 0;
+  color:#fff;
+  font-size: 2.4em;
+  text-transform: uppercase;
+  line-height:.8em;
+
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+/*****************/
+
+.todo-form {
+  position: relative;
+  top:-160px
+}
+
+.todo-form_addTodo input[type="text"] {
+  width: 100%;
+  font-size: 1.4em;
+  padding: .7em 5.6em .6em 2.6em;
+  border: none;
+  border-radius: .2em;
+  background:#25273C;
+  color:#777A92;
+  border-radius: 6px;
+  box-shadow: 0 0 32px rgba(105, 39, 88,.4);
+  outline: none;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.todo-form_addTodo input[type="radio"] {
+
+}
+
+.todo-form_addTodo input[type="submit"] {
+  border: none;
+  position: absolute;
+  right: 10px; top:10px;
+  background: #393c55;
+  color: #acacac;
+  padding: .5em 1.6em;
+  border-radius: 6px;
+  transition: color .8s, background .8s;
+  cursor: pointer;
+  font-size: 1em;
+  box-shadow: 0 0 6px rgba(0,0,0,.2) inset;
+}
+.todo-form_addTodo input[type="submit"]:disabled {
+  opacity:.4;
+}
+.todo-form_addTodo input[type="submit"]:hover {
+  color:#fff;
+  background: #505583;
+}
+.todo-form_addTodo input[type="submit"]:disabled:hover {
+  background: #393c55;
+  color: #acacac;
+}
+.todo-form_addTodo_checkbox {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #393c55;
+  position: absolute;
+  top:1.05em;
+  left: 1.5em;
+  box-sizing: border-box;
+  border-radius: 2em;
+  cursor: pointer;
+
+}
+
+.todo-form_addTodo_checkbox.checked {
+  background: url('public/img/icon-check.svg'),linear-gradient(310deg, rgba(143,180,255,1) 0%, rgba(212,125,255,1) 100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  border: none;
+  box-shadow: 0 0 12px rgba(0,0,0,.4) inset;
 }
